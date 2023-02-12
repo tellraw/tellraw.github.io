@@ -1,0 +1,31 @@
+// 1485 x height
+
+.render-output {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    .background {
+        display: flex;
+
+        &__image {
+            width: 100%;
+            border: 1px solid var(--color-accent-border);
+            border-radius: 6px;
+            transition: opacity 250ms ease-in-out;
+
+            &--blend {
+                opacity: 0;
+            }
+        }
+    }
+
+    .select-background-image {
+        display: flex;
+        padding: 8px;
+        gap: 16px;
+        justify-content: center;
+    }
+}

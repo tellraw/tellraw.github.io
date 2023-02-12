@@ -10,11 +10,14 @@
         <link rel="stylesheet/less" type="text/css" href="./style/components/header.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/section.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/details.less"/>
+        <link rel="stylesheet/less" type="text/css" href="./style/components/render-output.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/footer.less"/>
         <script src="https://cdn.jsdelivr.net/npm/less" defer></script>
 
         <!-- script -->
         <script src="./js/main.js" type="module" defer></script>
+        <script src="./js/select-background-image.js" type="module" defer></script>
+
     </head>
     <body>
         <header class="header header--main-header">
@@ -64,7 +67,22 @@
                         </svg>
                     </summary>
                     <div class="details__content">
+                        <div class="render-output">
+                            <div class="background">
+                                <img class="background__image" id="background__image" src="./images/background/0.png" alt="background">
 
+                            </div>
+                            <div class="select-background-image" id="select-background-image">
+                                <input class="select-background-image__radio" data-id="0" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="1" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="2" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="3" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="4" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="5" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="6" type="radio" name="select-background-image">
+                                <input class="select-background-image__radio" data-id="7" type="radio" name="select-background-image">
+                            </div>
+                        </div>
                     </div>
                 </details>
             </div>
