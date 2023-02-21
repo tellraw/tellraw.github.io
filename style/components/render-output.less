@@ -8,16 +8,58 @@
     gap: 8px;
 
     .background {
+        position: relative;
         display: flex;
+        user-select: none;
 
         &__image {
             width: 100%;
             border: 1px solid var(--color-accent-border);
             border-radius: 6px;
             transition: opacity 250ms ease-in-out;
+            // opacity: 0.3;
 
             &--blend {
                 opacity: 0;
+            }
+        }
+
+        &__chat-box {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            left: 1px;
+            bottom: 80px;
+            width: 664px;
+            height: calc(18px * 20);
+            justify-content: end;
+            overflow: hidden;
+
+            .content__line {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                margin-left: 4px;
+                padding-left: 4px;
+                background-color: rgba(0, 0, 0, 0.5);
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: -4px;
+                    width: 4px;
+                    height: 100%;
+                    background-color: var(--color-output-render-server-message-bg);
+                    pointer-events: none;
+                }
+
+                .text {
+                    display: flex;
+                    margin: 2px 0 -2px 0;
+                    font-family: 'Minecraft';
+                    font-size: 16px;
+                    line-height: 18px;
+                }
             }
         }
     }
