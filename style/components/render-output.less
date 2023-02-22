@@ -34,7 +34,6 @@
             height: calc(18px * 20);
             flex-direction: column;
             justify-content: end;
-            overflow: hidden;
 
             .text {
                 position: relative;
@@ -64,6 +63,57 @@
                     color: rgb(var(--r), var(--g), var(--b));
                 }
             }
+
+            .hover {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                padding: 2px;
+                clip-path: polygon(
+                    0% 2px,
+                    2px 2px,
+                    2px 0%,
+                    calc(100% - 2px) 0%,
+                    calc(100% - 2px) 2px,
+                    100% 2px,
+                    100% calc(100% - 2px),
+                    calc(100% - 2px) calc(100% - 2px),
+                    calc(100% - 2px) 100%,
+                    2px 100%,
+                    2px calc(100% - 2px), 
+                    0% calc(100% - 2px)
+                );
+                background-color: var(--color-output-render-hover-border);
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 2px;
+                    left: 2px;
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    background-image: linear-gradient(rgba(80, 0, 255, 50%), rgba(40, 0, 127, 50%));
+                    z-index: -1;
+                }
+
+                .content {
+                    margin: 2px;
+                    padding: 2px 4px 6px;
+                    font-size: 0;
+                    background-color: var(--color-output-render-hover-border);
+
+                    &__line {
+                        --r: 255;
+                        --g: 255;
+                        --b: 255;
+                        font-family: 'Minecraft';
+                        font-size: 16px;
+                        line-height: 18px;
+                        text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
+                        color: rgb(var(--r), var(--g), var(--b));
+                    }
+                }
+            }
         }
     }
 
@@ -74,4 +124,3 @@
         justify-content: center;
     }
 }
-
