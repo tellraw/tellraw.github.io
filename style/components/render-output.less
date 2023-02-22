@@ -35,7 +35,7 @@
             justify-content: end;
             overflow: hidden;
 
-            .content__line {
+            .text {
                 position: relative;
                 margin-left: 4px;
                 padding-left: 4px;
@@ -52,23 +52,7 @@
                     pointer-events: none;
                 }
 
-                &::after {
-                    position: absolute;
-                    content: '';
-                    top: 1px;
-                    right: -4px;
-                    width: 3px;
-                    height: calc(100% - 2px);
-                    transition: background-color 100ms ease-in-out;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    pointer-events: none;
-                }
-
-                &:hover::after {
-                    background-color: rgba(255, 255, 255, 0.5);
-                }
-
-                .text {
+                &__line {
                     --r: 255;
                     --g: 128;
                     --b: 0;
