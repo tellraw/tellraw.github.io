@@ -36,12 +36,6 @@
             justify-content: end;
 
             .content__line {
-                --r: 255;
-                --g: 255;
-                --b: 255;
-                font-family: 'Minecraft';
-                font-size: 16px;
-                line-height: 18px;
                 text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
                 color: rgb(var(--r), var(--g), var(--b));
             }
@@ -64,13 +58,22 @@
                         background-color: var(--color-output-render-server-message-bg);
                         pointer-events: none;
                     }
+
+                    &__line {
+                        --r: 255;
+                        --g: 128;
+                        --b: 255;
+                        font-family: 'Minecraft--Text';
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
                 }
             }
 
             .hover {
                 position: absolute;
-                left: 50%;
-                top: 50%;
+                left: 100px;
+                bottom: 100px;
                 padding: 2px;
                 clip-path: polygon(
                     0% 2px,
@@ -99,11 +102,26 @@
                     z-index: -1;
                 }
 
-                .content {
-                    margin: 2px;
-                    padding: 2px 4px 6px;
-                    font-size: 0;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 4px;
+                    left: 4px;
+                    width: calc(100% - 8px);
+                    height: calc(100% - 8px);
                     background-color: var(--color-output-render-hover-border);
+                    z-index: -1;
+                }
+
+                .content {
+                    margin: -2px 6px 6px 6px;
+                    font-size: 0;
+
+                    &__line {
+                        font-size: 22px;
+                        line-height: 24px;
+                        font-family: 'Minecraft--Hover';
+                    }
                 }
             }
         }
