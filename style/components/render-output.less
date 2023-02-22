@@ -35,6 +35,17 @@
             flex-direction: column;
             justify-content: end;
 
+            .content__line {
+                --r: 255;
+                --g: 255;
+                --b: 255;
+                font-family: 'Minecraft';
+                font-size: 16px;
+                line-height: 18px;
+                text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
+                color: rgb(var(--r), var(--g), var(--b));
+            }
+
             .text {
                 position: relative;
                 padding-left: 4px;
@@ -52,17 +63,6 @@
                         height: 100%;
                         background-color: var(--color-output-render-server-message-bg);
                         pointer-events: none;
-                    }
-    
-                    &__line {
-                        --r: 255;
-                        --g: 128;
-                        --b: 0;
-                        font-family: 'Minecraft';
-                        font-size: 16px;
-                        line-height: 18px;
-                        text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
-                        color: rgb(var(--r), var(--g), var(--b));
                     }
                 }
             }
@@ -104,17 +104,6 @@
                     padding: 2px 4px 6px;
                     font-size: 0;
                     background-color: var(--color-output-render-hover-border);
-
-                    &__line {
-                        --r: 255;
-                        --g: 255;
-                        --b: 255;
-                        font-family: 'Minecraft';
-                        font-size: 16px;
-                        line-height: 18px;
-                        text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
-                        color: rgb(var(--r), var(--g), var(--b));
-                    }
                 }
             }
         }
