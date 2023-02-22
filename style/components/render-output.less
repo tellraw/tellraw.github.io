@@ -71,10 +71,13 @@
             }
 
             .hover {
+                --x: 100;
+                --y: 100;
                 position: absolute;
-                left: 100px;
-                bottom: 100px;
+                left: calc(var(--x) * 1px);
+                top: calc(var(--y) * 1px);
                 padding: 2px;
+                transform: translate(15px, -100%);
                 clip-path: polygon(
                     0% 2px,
                     2px 2px,
@@ -90,6 +93,7 @@
                     0% calc(100% - 2px)
                 );
                 background-color: var(--color-output-render-hover-border);
+                pointer-events: none;
 
                 &::before {
                     position: absolute;
