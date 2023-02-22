@@ -37,30 +37,33 @@
 
             .text {
                 position: relative;
-                margin-left: 4px;
                 padding-left: 4px;
                 font-size: 0;
                 background-color: rgba(0, 0, 0, 0.5);
 
-                &::before {
-                    position: absolute;
-                    content: '';
-                    left: -4px;
-                    width: 4px;
-                    height: 100%;
-                    background-color: var(--color-output-render-server-message-bg);
-                    pointer-events: none;
-                }
-
-                &__line {
-                    --r: 255;
-                    --g: 128;
-                    --b: 0;
-                    font-family: 'Minecraft';
-                    font-size: 16px;
-                    line-height: 18px;
-                    text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
-                    color: rgb(var(--r), var(--g), var(--b));
+                .content {
+                    padding-left: 4px;
+                    
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        left: 0px;
+                        width: 4px;
+                        height: 100%;
+                        background-color: var(--color-output-render-server-message-bg);
+                        pointer-events: none;
+                    }
+    
+                    &__line {
+                        --r: 255;
+                        --g: 128;
+                        --b: 0;
+                        font-family: 'Minecraft';
+                        font-size: 16px;
+                        line-height: 18px;
+                        text-shadow: 2px 2px rgb(calc(var(--r) / 4), calc(var(--g) / 4), calc(var(--b) / 4));
+                        color: rgb(var(--r), var(--g), var(--b));
+                    }
                 }
             }
 
