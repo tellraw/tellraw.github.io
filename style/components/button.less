@@ -1,0 +1,31 @@
+.button {
+    display: inline-block;
+    all: unset;
+    padding: 0 12px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 6px;
+    user-select: none;
+    border: 1px solid;
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+    transition-property: background-color, border-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-button-submit-hover-bg);
+        border-color: var(--color-button-submit-hover-border);
+    }
+
+    &:active {
+        background-color: var(--color-button-submit-active-bg);
+        border-color: var(--color-button-submit-active-border);
+    }
+
+    &--submit {
+        background-color: var(--color-button-submit-bg);
+        border-color: var(--color-button-submit-border);
+    }
+}

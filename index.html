@@ -8,15 +8,18 @@
         <!-- style -->
         <link rel="stylesheet/less" type="text/css" href="./style/main.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/font.less"/>
+        <link rel="stylesheet/less" type="text/css" href="./style/components/button.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/header.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/section.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/details.less"/>
+        <link rel="stylesheet/less" type="text/css" href="./style/components/text-input.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/render-output.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/footer.less"/>
         <script src="https://cdn.jsdelivr.net/npm/less" defer></script>
 
         <!-- script -->
         <script src="./js/main.js" type="module" defer></script>
+        <script src="./js/text-area.js" type="module" defer></script>
         <script src="./js/select-background-image.js" type="module" defer></script>
 
     </head>
@@ -37,6 +40,7 @@
             </div>
         </header>
         <section class="section">
+            <!-- Text Input -->
             <div class="section__item">
                 <details class="details" open>
                     <summary class="details__header">
@@ -45,9 +49,24 @@
                             <path d="M6 8.825c-.2 0-.4-.1-.5-.2l-3.3-3.3c-.3-.3-.3-.8 0-1.1.3-.3.8-.3 1.1 0l2.7 2.7 2.7-2.7c.3-.3.8-.3 1.1 0 .3.3.3.8 0 1.1l-3.2 3.2c-.2.2-.4.3-.6.3Z"/>
                         </svg>
                     </summary>
-                    <div class="details__content">Hello World!</div>
+                    <div class="details__content">
+                        <div class="text-input">
+                            <div class="text-wrapper">
+                                <header class="tool-bar">
+                                    <ul class="tools">
+                                        <li class="tools__tool"></li>
+                                    </ul>
+                                </header>
+                                <div class="text-area" id="text-area" placeholder="Enter text..." contenteditable="true" spellcheck="false"></div>
+                            </div>
+                            <div class="button-wrapper">
+                                <input class="button button--submit" type="button" value="Generate">
+                            </div>
+                        </div>
+                    </div>
                 </details>
             </div>
+            <!-- Options -->
             <div class="section__item">
                 <details class="details">
                     <summary class="details__header">
@@ -59,6 +78,7 @@
                     <div class="details__content">Hello World!</div>
                 </details>
             </div>
+            <!-- Render Output -->
             <div class="section__item">
                 <details class="details" open>
                     <summary class="details__header">
@@ -109,6 +129,7 @@
                     </div>
                 </details>
             </div>
+            <!-- Footer -->
             <div class="section__item">
                 <footer class="footer">
                     <div class="footer__copyright">

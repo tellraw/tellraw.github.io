@@ -1,0 +1,52 @@
+@import '../colors.less';
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .text-wrapper {
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+
+        &:focus-within {
+            border-color: transparent;
+            outline: 2px solid var(--color-accent-border);
+        }
+
+        .tool-bar {
+
+        }
+
+        .text-area {
+            --rows: 3;
+            --max-rows: 8;
+            display: inline-block;
+            margin: 8px 0 4px;
+            padding: 0 8px;
+            width: 100%;
+            min-height: calc((var(--rows) * 46px) + 16px);
+            max-height: calc((var(--max-rows) * 46px) + 16px);
+            font-family: 'Minecraft--Text';
+            font-size: 32px;
+            line-height: 46px;
+            outline: none;
+            scrollbar-gutter: stable;
+            overflow-y: auto;
+
+            &[placeholder]:empty::before {
+                content: attr(placeholder);
+                font-family: 'Minecraft--Text';
+                font-size: 32px;
+                line-height: 46px;
+                opacity: 0.2;
+            }
+        }
+    }
+
+
+    .button-wrapper {
+        display: flex;
+        justify-content: end;
+    }
+}
