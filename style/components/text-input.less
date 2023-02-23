@@ -15,18 +15,24 @@
         }
 
         .tool-bar {
-            padding: 8px;
+            display: flex;
+            justify-content: space-between;
             border-bottom: 1px solid var(--color-border);
 
-            .tools {
-                display: flex;
+            .tools,
+            .edit {
+                display: grid;
+                padding: 8px;
                 height: 100%;
-                justify-content: end;
+                grid-auto-flow: column;
                 gap: 8px;
+                overflow-y: hidden;
+                overflow-x: auto;
 
                 &__divider {
                     width: 1px;
                     margin: 4px 0;
+                    flex-shrink: 0;
                     background-color: var(--color-border);
                 }
 
