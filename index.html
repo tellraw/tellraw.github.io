@@ -9,6 +9,8 @@
         <link rel="stylesheet/less" type="text/css" href="./style/main.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/font.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/button.less"/>
+        <link rel="stylesheet/less" type="text/css" href="./style/components/tool-bar.less"/>
+        <link rel="stylesheet/less" type="text/css" href="./style/components/text-area.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/header.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/section.less"/>
         <link rel="stylesheet/less" type="text/css" href="./style/components/details.less"/>
@@ -52,33 +54,45 @@
                     <div class="details__content">
                         <div class="text-input">
                             <div class="text-wrapper">
-                                <header class="tool-bar">
-                                    <ul class="edit">
-                                        <!-- edit -->
-                                        <li class="edit__tool" data-action="edit-copy" title="Edit:&#013;Copy">
-                                            <svg class="edit__tool__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                                <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/>
-                                            </svg>
+                                <header class="tool-bar" id="tool-bar">
+                                    <ul class="tools" data-tools="edit">
+                                        <li class="tools__group" data-group="text">
+                                            <ul class="tools__group__list">
+                                                <!-- Edit: Copy -->
+                                                <li class="tools__group__list__item" data-action="copy" title="Edit:&#013;Copy">
+                                                    <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/>
+                                                    </svg>
+                                                </li>
+                                                <!-- Edit: Paste -->
+                                                <li class="tools__group__list__item" data-action="paste" title="Edit:&#013;Paste">
+                                                    <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path d="M3.626 3.533a.249.249 0 0 0-.126.217v9.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-9.5a.249.249 0 0 0-.126-.217.75.75 0 0 1 .752-1.298c.541.313.874.89.874 1.515v9.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-9.5c0-.625.333-1.202.874-1.515a.75.75 0 0 1 .752 1.298ZM5.75 1h4.5a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-4.5A.75.75 0 0 1 5 4.75v-3A.75.75 0 0 1 5.75 1Zm.75 3h3V2.5h-3Z"/>
+                                                    </svg>
+                                                </li>
+                                            </ul>
                                         </li>
-                                        <li class="edit__tool" data-action="edit-paste" title="Edit:&#013;Paste">
-                                            <svg class="edit__tool__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                                <path d="M3.626 3.533a.249.249 0 0 0-.126.217v9.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-9.5a.249.249 0 0 0-.126-.217.75.75 0 0 1 .752-1.298c.541.313.874.89.874 1.515v9.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-9.5c0-.625.333-1.202.874-1.515a.75.75 0 0 1 .752 1.298ZM5.75 1h4.5a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-4.5A.75.75 0 0 1 5 4.75v-3A.75.75 0 0 1 5.75 1Zm.75 3h3V2.5h-3Z"/>
-                                            </svg>
+                                        <li class="tools__divider"></li>
+                                        <li class="tools__group" data-group="history">
+                                            <ul class="tools__group__list">
+                                                <!-- History: Undo -->
+                                                <li class="tools__group__list__item" data-action="undo" title="History:&#013;Undo">
+                                                    <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path d="M6.654,2.094C6.944,2.385 6.944,2.863 6.654,3.154L3.684,6.124L10.124,6.124C12.73,6.124 14.874,8.268 14.874,10.874L14.874,13.374C14.874,13.785 14.535,14.124 14.124,14.124C13.712,14.124 13.374,13.785 13.374,13.374L13.374,10.874C13.374,9.091 11.907,7.624 10.124,7.624L3.684,7.624L6.654,10.594C6.806,10.736 6.893,10.935 6.893,11.143C6.893,11.485 6.659,11.785 6.328,11.869C6.063,11.937 5.781,11.854 5.594,11.654L1.344,7.404C1.053,7.113 1.053,6.635 1.344,6.344L5.594,2.094C5.885,1.803 6.363,1.803 6.654,2.094Z"/>
+                                                    </svg>
+                                                </li>
+                                                <!-- History: Redo -->
+                                                <li class="tools__group__list__item" data-action="redo" title="History:&#013;Redo">
+                                                    <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path d="M9.346,2.094C9.056,2.385 9.056,2.863 9.346,3.154L12.316,6.124L5.876,6.124C3.27,6.124 1.126,8.268 1.126,10.874L1.126,13.374C1.126,13.785 1.465,14.124 1.876,14.124C2.288,14.124 2.626,13.785 2.626,13.374L2.626,10.874C2.626,9.091 4.093,7.624 5.876,7.624L12.316,7.624L9.346,10.594C9.194,10.736 9.107,10.935 9.107,11.143C9.107,11.485 9.341,11.785 9.672,11.869C9.937,11.937 10.219,11.854 10.406,11.654L14.656,7.404C14.947,7.113 14.947,6.635 14.656,6.344L10.406,2.094C10.115,1.803 9.637,1.803 9.346,2.094Z"/>
+                                                    </svg>
+                                                </li>
+                                                
+                                            </ul>
                                         </li>
-                                        <li class="edit__divider"></li>
-                                        <li class="edit__tool" data-action="edit-undo" title="Edit:&#013;Undo">
-                                            <svg class="edit__tool__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                                <path d="M6.654,2.094C6.944,2.385 6.944,2.863 6.654,3.154L3.684,6.124L10.124,6.124C12.73,6.124 14.874,8.268 14.874,10.874L14.874,13.374C14.874,13.785 14.535,14.124 14.124,14.124C13.712,14.124 13.374,13.785 13.374,13.374L13.374,10.874C13.374,9.091 11.907,7.624 10.124,7.624L3.684,7.624L6.654,10.594C6.806,10.736 6.893,10.935 6.893,11.143C6.893,11.485 6.659,11.785 6.328,11.869C6.063,11.937 5.781,11.854 5.594,11.654L1.344,7.404C1.053,7.113 1.053,6.635 1.344,6.344L5.594,2.094C5.885,1.803 6.363,1.803 6.654,2.094Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="edit__tool" data-action="edit-redopaste" title="Edit:&#013;Redo">
-                                            <svg class="edit__tool__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                                <path d="M9.346,2.094C9.056,2.385 9.056,2.863 9.346,3.154L12.316,6.124L5.876,6.124C3.27,6.124 1.126,8.268 1.126,10.874L1.126,13.374C1.126,13.785 1.465,14.124 1.876,14.124C2.288,14.124 2.626,13.785 2.626,13.374L2.626,10.874C2.626,9.091 4.093,7.624 5.876,7.624L12.316,7.624L9.346,10.594C9.194,10.736 9.107,10.935 9.107,11.143C9.107,11.485 9.341,11.785 9.672,11.869C9.937,11.937 10.219,11.854 10.406,11.654L14.656,7.404C14.947,7.113 14.947,6.635 14.656,6.344L10.406,2.094C10.115,1.803 9.637,1.803 9.346,2.094Z"/>
-                                            </svg>
-                                        </li>
+                                        
                                     </ul>
-                                    <ul class="tools">
-                                        <!-- format -->
+                                    <ul class="tools" data-tools="tellraw">
                                         <li class="tools__group" data-group="format">
                                             <ul class="tools__group__list">
                                                 <!-- Format: Bold Text -->
@@ -146,7 +160,7 @@
                                                     </svg>
                                                 </li>
                                                 <!-- Click Event: Insert Text -->
-                                                <li class="tools__group__list__item" data-action="insert-text" title="Click Event:&#013;Insert Text">
+                                                <li class="tools__group__list__item" data-action="inline-text" title="Click Event:&#013;Insert Text">
                                                     <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                                         <path d="m10.78 8.53-3.75 3.75a.749.749 0 1 1-1.06-1.06l2.469-2.47H1.75a.75.75 0 0 1 0-1.5h6.689L5.97 4.78a.749.749 0 1 1 1.06-1.06l3.75 3.75a.749.749 0 0 1 0 1.06ZM13 12.25v-8.5a.75.75 0 0 1 1.5 0v8.5a.75.75 0 0 1-1.5 0Z">
                                                     </svg>
@@ -190,29 +204,29 @@
                                             </ul>
                                         </li>
                                         <li class="tools__divider"></li>
-                                        <li class="tools__group" data-group="insert">
+                                        <li class="tools__group" data-group="inline">
                                             <ul class="tools__group__list">
-                                                <li class="tools__group__list__item" data-action="insert-selector" title="Inline:&#013;Insert Selector">
+                                                <li class="tools__group__list__item" data-action="inline-selector" title="Inline:&#013;Insert Selector">
                                                     <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                                         <path d="M4.75 2.37a6.501 6.501 0 0 0 6.5 11.26.75.75 0 0 1 .75 1.298A7.999 7.999 0 0 1 .989 4.148 8 8 0 0 1 16 7.75v1.5a2.75 2.75 0 0 1-5.072 1.475 3.999 3.999 0 0 1-6.65-4.19A4 4 0 0 1 12 8v1.25a1.25 1.25 0 0 0 2.5 0V7.867a6.5 6.5 0 0 0-9.75-5.496ZM10.5 8a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
                                                     </svg>
                                                 </li>
-                                                <li class="tools__group__list__item" data-action="insert-nbt" title="Inline:&#013;Insert NBT Storage">
+                                                <li class="tools__group__list__item" data-action="inline-nbt" title="Inline:&#013;Insert NBT Storage">
                                                     <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                                         <path d="M1 3.5c0-.626.292-1.165.7-1.59.406-.422.956-.767 1.579-1.041C4.525.32 6.195 0 8 0c1.805 0 3.475.32 4.722.869.622.274 1.172.62 1.578 1.04.408.426.7.965.7 1.591v9c0 .626-.292 1.165-.7 1.59-.406.422-.956.767-1.579 1.041C11.476 15.68 9.806 16 8 16c-1.805 0-3.475-.32-4.721-.869-.623-.274-1.173-.62-1.579-1.04-.408-.426-.7-.965-.7-1.591Zm1.5 0c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 5.205 6.353 5.5 8 5.5c1.646 0 3.101-.295 4.118-.742.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55 0-.133-.058-.318-.282-.551-.227-.237-.591-.483-1.101-.707C11.102 1.795 9.647 1.5 8 1.5c-1.646 0-3.101.295-4.118.742-.508.224-.873.471-1.1.708-.224.232-.282.417-.282.55Zm0 4.5c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 9.705 6.353 10 8 10c1.646 0 3.101-.295 4.118-.742.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55V5.724c-.241.15-.503.286-.778.407C11.475 6.68 9.805 7 8 7c-1.805 0-3.475-.32-4.721-.869a6.15 6.15 0 0 1-.779-.407Zm0 2.225V12.5c0 .133.058.318.282.55.227.237.592.484 1.1.708 1.016.447 2.471.742 4.118.742 1.647 0 3.102-.295 4.117-.742.51-.224.874-.47 1.101-.707.224-.233.282-.418.282-.551v-2.275c-.241.15-.503.285-.778.406-1.247.549-2.917.869-4.722.869-1.805 0-3.475-.32-4.721-.869a6.327 6.327 0 0 1-.779-.406Z"/>
                                                     </svg>
                                                 </li>
-                                                <li class="tools__group__list__item" data-action="insert-score" title="Inline:&#013;Insert Score">
+                                                <li class="tools__group__list__item" data-action="inline-score" title="Inline:&#013;Insert Score">
                                                     <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                                         <path d="M9 4.75A.75.75 0 0 1 9.75 4h4a.75.75 0 0 1 .53 1.28l-1.89 1.892c.312.076.604.18.867.319.742.391 1.244 1.063 1.244 2.005 0 .653-.231 1.208-.629 1.627-.386.408-.894.653-1.408.777-1.01.243-2.225.063-3.124-.527a.751.751 0 0 1 .822-1.254c.534.35 1.32.474 1.951.322.306-.073.53-.201.67-.349.129-.136.218-.32.218-.596 0-.308-.123-.509-.444-.678-.373-.197-.98-.318-1.806-.318a.75.75 0 0 1-.53-1.28l1.72-1.72H9.75A.75.75 0 0 1 9 4.75Zm-3.587 5.763c-.35-.05-.77.113-.983.572a.75.75 0 1 1-1.36-.632c.508-1.094 1.589-1.565 2.558-1.425 1 .145 1.872.945 1.872 2.222 0 1.433-1.088 2.192-1.79 2.681-.308.216-.571.397-.772.573H7a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75c0-.69.3-1.211.67-1.61.348-.372.8-.676 1.15-.92.8-.56 1.18-.904 1.18-1.474 0-.473-.267-.69-.587-.737ZM5.604.089A.75.75 0 0 1 6 .75v4.77h.711a.75.75 0 0 1 0 1.5H3.759a.75.75 0 0 1 0-1.5H4.5V2.15l-.334.223a.75.75 0 0 1-.832-1.248l1.5-1a.75.75 0 0 1 .77-.037Z"/>
                                                     </svg>
                                                 </li>
-                                                <li class="tools__group__list__item" data-action="insert-translation" title="Inline:&#013;Insert Translation">
+                                                <li class="tools__group__list__item" data-action="inline-translation" title="Inline:&#013;Insert Translation">
                                                     <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                                         <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"/>
                                                     </svg>
                                                 </li>
-                                                <li class="tools__group__list__item" data-action="insert-keybind" title="Inline:&#013;Insert Keybind">
+                                                <li class="tools__group__list__item" data-action="inline-keybind" title="Inline:&#013;Insert Keybind">
                                                     <svg class="tools__group__list__item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                                         <path d="M0 2.75A2.75 2.75 0 0 1 2.75 0h10.5A2.75 2.75 0 0 1 16 2.75v10.5A2.75 2.75 0 0 1 13.25 16H2.75A2.75 2.75 0 0 1 0 13.25ZM2.75 1.5c-.69 0-1.25.56-1.25 1.25v10.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25V2.75c0-.69-.56-1.25-1.25-1.25Z"/>
                                                         <path d="M8 4a.75.75 0 0 1 .75.75V6.7l1.69-.975a.75.75 0 0 1 .75 1.3L9.5 8l1.69.976a.75.75 0 0 1-.75 1.298L8.75 9.3v1.951a.75.75 0 0 1-1.5 0V9.299l-1.69.976a.75.75 0 0 1-.75-1.3L6.5 8l-1.69-.975a.75.75 0 0 1 .75-1.3l1.69.976V4.75A.75.75 0 0 1 8 4Z"/>
@@ -222,7 +236,20 @@
                                         </li>
                                     </ul>
                                 </header>
-                                <div class="text-area" id="text-area" placeholder="Enter text..." contenteditable="true" spellcheck="false"></div>
+                                <div class="text-area">
+                                    <textarea class="text-area__input" id="text-area" rows="20" spellcheck="false" placeholder="Enter text..."></textarea>
+                                    <div class="text-area__render">
+                                        <span class="text-area__render__line" data-format="bold-text">Bold</span><br>
+                                        <span class="text-area__render__line" data-format="italic-text">Italic</span><br>
+                                        <span class="text-area__render__line" data-format="underlined-text">Underlined</span><br>
+                                        <span class="text-area__render__line" data-format="strikethrough-text">Strikethrough</span><br>
+                                        <span class="text-area__render__line" data-format="obfuscated-text">Obfuscated</span><br>
+                                        <span class="text-area__render__line"></span><br>
+                                        <span class="text-area__render__line" data-click-event="obfuscated-text">Click-Event</span><br>
+                                        <span class="text-area__render__line" data-hover-event="obfuscated-text">Hover-Event</span><br>
+                                        <span class="text-area__render__line" data-inline="obfuscated-text">Inline</span>
+                                    </div>
+                                </div>
                                 <div class="text-options">
                                     <span class="title">Color</span>
                                 </div>
