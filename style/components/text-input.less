@@ -15,6 +15,48 @@
         }
 
         .tool-bar {
+            .tools {
+                &__group {
+                    &__list {
+                        display: grid;
+                        grid-auto-flow: column;
+                        gap: 8px;
+
+                        &__item {
+                            display: flex;
+                            width: 28px;
+                            height: 28px;
+                            align-items: center;
+                            justify-content: center;
+                            flex-shrink: 0;
+                            border-radius: 6px;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: var(--color-button-icon-hover-bg);
+                            }
+
+                            &__icon {
+                                width: 16px;
+                                height: 16px;
+                                fill: currentColor;
+                                color: var(--color-tool-bar-icon);
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                }
+
+                &__divider {
+                    width: 1px;
+                    margin: 4px 0;
+                    flex-shrink: 0;
+                    background-color: var(--color-border);
+                }
+            }
+        }
+
+        .tool-bar {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid var(--color-border);
@@ -33,14 +75,8 @@
                 overflow-y: hidden;
                 overflow-x: auto;
 
-                &__divider {
-                    width: 1px;
-                    margin: 4px 0;
-                    flex-shrink: 0;
-                    background-color: var(--color-border);
-                }
-
                 &__tool {
+                    position: relative;
                     display: flex;
                     width: 28px;
                     height: 28px;
@@ -53,6 +89,7 @@
                     &:hover {
                         background-color: var(--color-button-icon-hover-bg);
                     }
+
 
                     &__icon {
                         width: 16px;
@@ -89,6 +126,12 @@
                 opacity: 0.2;
                 pointer-events: none;
             }
+        }
+
+        .text-options {
+            height: 100px;
+            padding: 8px;
+            border-top: 1px solid var(--color-border);
         }
     }
 
