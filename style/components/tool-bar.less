@@ -1,0 +1,63 @@
+@import '../colors.less';
+
+.tool-bar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    user-select: none;
+
+    .tools {
+        display: grid;
+        padding: 8px;
+        height: 100%;
+        grid-auto-flow: column;
+        gap: 8px;
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        &__group {
+            &__list {
+                display: grid;
+                grid-auto-flow: column;
+                gap: 8px;
+
+                &__item {
+                    display: flex;
+                    width: 28px;
+                    height: 28px;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    border-radius: 6px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--color-button-icon-hover-bg);
+                    }
+
+                    &__icon {
+                        width: 16px;
+                        height: 16px;
+                        fill: currentColor;
+                        color: var(--color-tool-bar-icon);
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+
+        &:first-child {
+            flex-shrink: 0;
+            border-right: 1px solid var(--color-border);
+        }
+
+        &__divider {
+            width: 1px;
+            margin: 4px 0;
+            flex-shrink: 0;
+            background-color: var(--color-border);
+        }
+
+        
+    }   
+}
