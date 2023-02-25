@@ -1,0 +1,99 @@
+.text-area {
+    position: relative;
+    // display: flex;
+
+    &__input {
+        margin: 8px 0;
+        padding: 0 8px;
+        width: 100%;
+        min-height: 100px;
+        font-family: 'Minecraft--Text';
+        font-size: 32px;
+        line-height: 46px;
+        border: none;
+        outline: none;
+        resize: vertical;
+        scrollbar-gutter: stable;
+        // color: transparent;
+        caret-color: white;
+        background-color: transparent;
+    }
+
+    &__render {
+        position: absolute;
+        display: inline-block;
+        padding: 8px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        white-space: normal;
+        overflow: hidden;
+
+        &__line {
+            font-family: 'Minecraft--Text';
+            font-size: 32px;
+            line-height: 46px;
+
+            &[data-format~="bold-text"] {
+                font-weight: bold;
+            }
+
+            &[data-format~="italic-text"] {
+                font-style: italic;
+            }
+
+            &[data-format~="underlined-text"] {
+                text-decoration: underline;
+            }
+
+            &[data-format~="strikethrough-text"] {
+                text-decoration: line-through;
+            }
+
+            &[data-format~="obfuscated-text"] {
+                
+            }
+
+            &[data-click-event],
+            &[data-hover-event],
+            &[data-inline] {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: -1px;
+                    right: 3px;
+                    height: 100%;
+                    border-radius: 2px;
+                    z-index: -1;
+                    opacity: 1;
+                }
+            }
+
+            &[data-click-event] {
+                &::before {
+                    background-color: var(--color-tag-click-event-bg);
+                    box-shadow: 0 0 0 1px var(--color-tag-click-event-border);
+                }
+            }
+
+            &[data-hover-event] {
+                &::before {
+                    background-color: var(--color-tag-hover-event-bg);
+                    box-shadow: 0 0 0 1px var(--color-tag-hover-event-border);
+                }
+            }
+
+            &[data-inline] {
+                &::before {
+                    background-color: var(--color-tag-inline-bg);
+                    box-shadow: 0 0 0 1px var(--color-tag-inline-border);
+                }
+            }
+        }
+    }
+}
